@@ -35,6 +35,12 @@ Photos à demander à l'intéressé lui-même (droits d'image) : ne pas les réc
 - Vidéos : tableau `videos` dans `_build/build.js` (titre, plateforme, thème). Pour de vraies vidéos : remplacer chaque carte par un lien direct vers la publication, ou intégrer le lecteur (iframe) de TikTok / YouTube / Facebook.
 - Blog : les « fiches » jouent déjà le rôle d'articles. Une page Blog séparée peut être ajoutée s'il le souhaite.
 
+## Identité visuelle et services (d'après son profil WhatsApp Business)
+- Couleurs : noir et or, reprises de sa bannière « Blessing Conseils ». Variables CSS en haut de `css/style.css` (`--forest` = noir, `--orange2` = or vif, `--orange` = or foncé pour le texte sur fond clair).
+- Page `/services/` : 4 services lus sur sa bannière (conseil juridique, conseil en entreprise, accompagnement administratif, accompagnement en immobilier), ses valeurs (écoute, rigueur, intégrité) et sa phrase d'accroche. **Les descriptions sont des exemples** : à valider avec lui (périmètre exact, tarifs, délais). Données : tableau `services` dans `_build/build.js`.
+- Le bouton WhatsApp utilise le numéro de son profil WhatsApp Business public (modifiable dans `SOCIAL`). Son logo n'est pas reproduit : un logo à lui pourra être ajouté à sa demande.
+- Vérifier avec lui ce qu'il peut légalement proposer comme conseil en tant que juriste non avocat, et adapter les formulations.
+
 ## Précautions
 - Conserver l'avertissement « information juridique générale, pas une consultation » sur toutes les pages (il reprend sa propre mention : ni avocat ni notaire).
 - Ne pas proposer de « consultation » payante sans avoir vérifié ce qu'un non-avocat peut légalement offrir.

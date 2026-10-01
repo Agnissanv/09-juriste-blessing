@@ -7,7 +7,7 @@ const NAME = 'Juriste Blessing';
 const MAIL = 'bonjour@exemple.ci'; // À remplacer par l'adresse réelle
 const I = {
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>',
-  seal: '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="currentColor"/><path d="M32 12v34M18 20h28M18 20l-7 16h14zM46 20l-7 16h14zM22 48h20" fill="none" stroke="var(--forest)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="12" r="3" fill="var(--orange)"/></svg>',
+  seal: '<svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="currentColor"/><path d="M32 12v34M18 20h28M18 20l-7 16h14zM46 20l-7 16h14zM22 48h20" fill="none" stroke="#0D0C09" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="12" r="3" fill="#0D0C09"/></svg>',
   check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.500"/></svg>',
 };
 
@@ -17,13 +17,23 @@ const SOCIAL = [
   ['TikTok', 'https://www.tiktok.com/', 'Vidéos courtes', '<path d="M16.500 3c.3 2.200 1.600 3.600 3.800 3.800v3.100c-1.400 0-2.700-.4-3.800-1.200v6.100a5.700 5.700 0 1 1-5.700-5.700c.3 0 .6 0 .9.1v3.200a2.600 2.600 0 1 0 1.700 2.400V3z"/>'],
   ['YouTube', 'https://www.youtube.com/', 'Vidéos longues', '<path d="M21.600 7.200a2.500 2.500 0 0 0-1.800-1.800C18.200 5 12 5 12 5s-6.200 0-7.800.4A2.500 2.500 0 0 0 2.400 7.200C2 8.800 2 12 2 12s0 3.200.4 4.800a2.500 2.500 0 0 0 1.800 1.800C5.800 19 12 19 12 19s6.200 0 7.800-.4a2.500 2.500 0 0 0 1.800-1.800c.4-1.600.4-4.800.4-4.800s0-3.200-.4-4.800zM10 15V9l5.200 3z"/>'],
   ['Instagram', 'https://www.instagram.com/', 'Photos & stories', '<rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.500" cy="6.500" r="1.200"/>'],
-  ['WhatsApp', 'https://www.whatsapp.com/', 'Chaîne', '<path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.300 14.200c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.500.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/>'],
+  ['WhatsApp', 'https://wa.me/2250718216265', 'Conseils · 24h/24', '<path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm5.300 14.200c-.2.600-1.300 1.200-1.800 1.200-.5.100-1 .2-3.300-.7-2.800-1.200-4.600-4-4.700-4.200-.1-.2-1.100-1.500-1.100-2.800s.7-2 1-2.300c.2-.3.500-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.4.600c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.500.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.200.1.800-.1 1.400z"/>'],
 ];
 const sico = (p) => `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${p}</svg>`;
 const socialRow = (cls = '') => `<ul class="social ${cls}">${SOCIAL.map(s => `<li><a href="${s[1]}" target="_blank" rel="noopener noreferrer" aria-label="${s[0]}" title="${s[0]}">${sico(s[3])}</a></li>`).join('')}</ul>`;
 const portrait = (img, alt, cls = '') => `<figure class="portrait ${cls}"><div class="pf"><img src="img/${img}.webp" alt="${alt}" loading="lazy"></div><figcaption class="ph-badge">Portrait à venir</figcaption></figure>`;
 const videos = [['Vidéo d\'exemple', 'Les droits du locataire en 60 secondes', 'TikTok', 'Logement'], ['Vidéo d\'exemple', 'Contrat de travail : ce qu\'il faut lire', 'YouTube', 'Travail'], ['Vidéo d\'exemple', 'Mariage et régime matrimonial', 'Facebook', 'Famille'], ['Vidéo d\'exemple', 'Créer son entreprise : par où commencer', 'YouTube', 'Entreprise'], ['Vidéo d\'exemple', 'Que faire en cas d\'arnaque en ligne', 'TikTok', 'Numérique'], ['Vidéo d\'exemple', 'Perte de papiers : les bons réflexes', 'Facebook', 'Démarches']];
 const vcard = (v, i) => `<a class="vcard rv" href="${SOCIAL.find(s => s[0] === v[2])[1]}" target="_blank" rel="noopener noreferrer" style="--d:${(i % 3) * .08}s"><span class="thumb"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="plat">${v[2]}</span><span class="ex">${v[0]}</span></span><span class="vt">${v[1]}</span><span class="vm">${v[3]}</span></a>`;
+
+const services = [
+  ['Conseil juridique', "Comprendre sa situation, ses droits et ses options, avec une analyse claire et des conseils concrets.", '<path d="M12 3v16M5 7h14M5 7l-3 7a3.500 3.500 0 0 0 6 0zM19 7l-3 7a3.500 3.500 0 0 0 6 0zM8 21h8"/>'],
+  ['Conseil en entreprise', "Accompagner les entrepreneurs : structure, contrats, relations avec clients et partenaires, bonnes pratiques.", '<path d="M3 21V9l6-4v16M9 21V3l8 4v14M3 21h18M12 9h2M12 13h2M12 17h2"/>'],
+  ['Accompagnement administratif', "Démarches, dossiers et documents officiels : savoir quoi faire, dans quel ordre et avec qui.", '<path d="M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h6"/>'],
+  ['Accompagnement en immobilier', "Baux, litiges de logement, vérifications avant de louer ou d'acheter.", '<path d="M3 11 12 3l9 8M5 10v11h14V10M10 21v-6h4v6"/>'],
+];
+const sicon = (p) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+const scard = (v, i) => `<article class="svc rv" style="--d:${i * .08}s"><span class="si2">${sicon(v[2])}</span><span class="n">0${i + 1}</span><h3>${v[0]}</h3><p>${v[1]}</p></article>`;
+const WA = SOCIAL.find(x => x[0] === 'WhatsApp')[1];
 
 const themes = [['famille', 'Famille'], ['travail', 'Travail'], ['logement', 'Logement'], ['entreprise', 'Entreprise'], ['demarches', 'Démarches'], ['numerique', 'Numérique']];
 const fiches = [
@@ -50,7 +60,7 @@ const translations = [
 ];
 
 // ---------- gabarits ----------
-const nav = [['index', 'Accueil'], ['fiches', 'Les fiches'], ['videos', 'Vidéos'], ['guides', 'Guides'], ['collaborer', 'Collaborer'], ['a-propos', 'À propos']];
+const nav = [['index', 'Accueil'], ['services', 'Services'], ['fiches', 'Les fiches'], ['videos', 'Vidéos'], ['collaborer', 'Collaborer'], ['a-propos', 'À propos']];
 
 function head({ title, desc, page }) {
   const t = page === 'index' ? `${NAME} · Le droit, en clair` : `${title} · ${NAME}`;
@@ -61,7 +71,7 @@ function head({ title, desc, page }) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${t}</title>
 <meta name="description" content="${desc}">
-<meta name="theme-color" content="#10261B">
+<meta name="theme-color" content="#0D0C09">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:title" content="${t}">
@@ -114,7 +124,7 @@ pages.index = head({ title: 'Accueil', desc: "Le droit expliqué simplement : fi
 <div class="htxt"><p class="kicker light rv">Juriste · Créateur de contenu · Côte d'Ivoire</p>
 <h1 class="rv">Le droit,<br><em>en clair.</em></h1>
 <p class="lead rv">Des fiches pratiques, des guides et des réponses simples pour comprendre vos droits au quotidien : famille, travail, logement, entreprise, démarches.</p>
-<div class="actions rv"><a class="btn light" href="fiches.html">Explorer les fiches ${I.arrow}</a><a class="btn ghost" href="poser-une-question.html">Poser une question</a></div>
+<div class="actions rv"><a class="btn light" href="fiches.html">Explorer les fiches ${I.arrow}</a><a class="btn ghost" href="services.html">Nos services</a></div>
 <p class="hnote rv">« La loi est dure mais c'est la loi. »</p></div>
 <div class="hside rv">${portrait('portrait-accueil', 'Portrait de Juriste Blessing', 'lead')}<div class="hnumbers"><b>649 K</b><span>abonnés qui apprennent le droit avec lui</span></div></div></div></section>
 
@@ -130,6 +140,12 @@ pages.index = head({ title: 'Accueil', desc: "Le droit expliqué simplement : fi
 <div class="trad-f" role="tablist" aria-label="Choisir un exemple">${translations.map((t, i) => `<button type="button" role="tab" data-i="${i}" aria-selected="${i === 0}">${t[2]}</button>`).join('')}</div>
 </aside></div></section>
 
+<section class="s dark svcsec"><div class="wrap">
+<div class="shead"><div><p class="kicker light rv">Blessing Conseils</p><h2 class="rv">Besoin d'un <em>accompagnement ?</em></h2></div><a class="more rv" href="services.html">Tous les services ${I.arrow}</a></div>
+<div class="svcgrid">${services.map(scard).join('')}</div>
+<p class="tagl rv">« Nous transformons la rigueur juridique en solutions concrètes et efficaces pour vous. »</p>
+</div></section>
+
 <section class="s intro"><div class="wrap split">
 <div><p class="kicker rv">Pourquoi ce site</p><h2 class="rv">Comprendre la loi ne devrait pas être <em>réservé aux juristes.</em></h2></div>
 <div class="rv"><p class="big">Chaque fiche traduit un texte de loi en langage de tous les jours : ce que dit le droit, ce que cela change pour vous, les erreurs fréquentes et les bons réflexes.</p>
@@ -139,7 +155,7 @@ pages.index = head({ title: 'Accueil', desc: "Le droit expliqué simplement : fi
 <section class="s dark scope"><div class="wrap">
 <div class="two">
 <div class="rv"><p class="kicker light">Ce que vous trouverez ici</p><ul class="ticks">${['Des explications claires, sans jargon', 'Des exemples tirés de la vie courante', 'Des listes de vérification avant de signer', 'Une orientation vers les bons interlocuteurs', 'Des guides à télécharger'].map(x => `<li>${I.check}${x}</li>`).join('')}</ul></div>
-<div class="rv notbox"><p class="kicker light o">Ce que vous ne trouverez pas ici</p><ul class="ticks no">${['La représentation devant un tribunal', 'Une consultation personnalisée sur votre dossier', 'La rédaction d\'actes qui engagent un avocat ou un notaire'].map(x => `<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>${x}</li>`).join('')}</ul><p class="small">Juriste Blessing se présente comme juriste, ni avocat ni notaire : le contenu est de l'information juridique générale. Pour un dossier précis, rapprochez-vous d'un professionnel habilité.</p></div>
+<div class="rv notbox"><p class="kicker light o">Et pour votre situation précise ?</p><p class="big">Les fiches et les vidéos donnent une information générale. Pour votre dossier, un accompagnement personnalisé est possible : conseil, démarches, immobilier, entreprise.</p><div class="actions"><a class="btn light" href="services.html">Voir les services ${I.arrow}</a><a class="btn ghost" href="${WA}" target="_blank" rel="noopener noreferrer">WhatsApp</a></div><p class="small">Les fiches et vidéos ne remplacent pas une consultation personnalisée.</p></div>
 </div></div></section>
 
 <section class="s"><div class="wrap">
@@ -212,6 +228,19 @@ pages.videos = head({ title: 'Vidéos', desc: "Les vidéos de Juriste Blessing :
 <div class="socbox dk rv"><div><p class="kicker light">Abonnez-vous</p><h2>Ne ratez <em>aucune vidéo.</em></h2></div><ul class="soclist">${SOCIAL.map(x => `<li><a href="${x[1]}" target="_blank" rel="noopener noreferrer"><span class="si">${sico(x[3])}</span><span class="sn">${x[0]}<small>${x[2]}</small></span>${I.arrow}</a></li>`).join('')}</ul></div>
 </div></section>` + footer();
 
+// ================= SERVICES =================
+pages.services = head({ title: 'Services', desc: "Blessing Conseils : conseil juridique, conseil en entreprise, accompagnement administratif et accompagnement en immobilier.", page: 'services' }) + header('services') +
+  phero('Blessing Conseils', 'Des solutions <em>concrètes.</em>', "Nous transformons la rigueur juridique en solutions concrètes et efficaces pour vous.") + `
+<section class="s tight"><div class="wrap">
+<div class="svcgrid light">${services.map(scard).join('')}</div>
+<p class="small ctr">Descriptions d'exemple, à valider et compléter avec lui (périmètre exact des services, tarifs, délais).</p>
+<ul class="values rv">${[['Écoute', 'Comprendre votre situation avant de proposer quoi que ce soit.'], ['Rigueur', 'Des conseils précis, fondés sur le droit.'], ['Intégrité', "Dire les choses telles qu'elles sont, y compris les limites."]].map(v => `<li><b>${v[0]}</b><span>${v[1]}</span></li>`).join('')}</ul>
+</div></section>
+<section class="s dark"><div class="wrap"><div class="shead"><div><p class="kicker light rv">Comment ça se passe</p><h2 class="rv">Trois étapes, <em>sans complication.</em></h2></div></div>
+<ol class="steps">${[['Vous décrivez votre situation', 'Par WhatsApp ou avec le formulaire, en quelques lignes.'], ['Premier échange', 'On fait le point sur votre besoin et sur ce qui est possible.'], ['Accompagnement', "Un suivi clair, étape par étape, jusqu'à la solution."]].map((x, i) => `<li class="rv"><span>0${i + 1}</span><div><h3>${x[0]}</h3><p>${x[1]}</p></div></li>`).join('')}</ol>
+<div class="actions rv"><a class="btn light" href="${WA}" target="_blank" rel="noopener noreferrer">Écrire sur WhatsApp ${I.arrow}</a><a class="btn ghost" href="poser-une-question.html">Poser une question</a></div>
+<p class="small light rv" style="margin-top:26px">Ouvert 24 h/24 sur WhatsApp Business. Étapes d'exemple, à adapter.</p></div></section>` + footer();
+
 // ================= GUIDES =================
 pages.guides = head({ title: 'Guides', desc: "Guides pratiques à garder sous la main : locataire, salarié, entrepreneur. Bientôt disponibles.", page: 'guides' }) + header('guides') +
   phero('À télécharger', 'Les guides <em>pratiques.</em>', 'Des guides courts et structurés, pour avoir les bons réflexes avant de signer.') + `
@@ -254,7 +283,7 @@ pages['a-propos'] = head({ title: 'À propos', desc: "Juriste, créateur de cont
 <div><h2 class="rv">Une mission : <em>expliquer.</em></h2><p class="big rv">Beaucoup de problèmes juridiques viennent d'un simple manque d'information. L'ambition est de traduire les textes en langage courant, avec des exemples du quotidien.</p>
 <p class="rv">Sa devise résume l'esprit : « La loi est dure mais c'est la loi ». Il ne s'agit pas de faire peur, mais de rappeler que connaître ses droits permet de mieux les défendre.</p>
 <div class="rv socabout"><p class="kicker">Le retrouver</p>${socialRow('big')}</div>
-<div class="rv warnbox"><b>Précision importante</b><p>Juriste Blessing n'est ni avocat ni notaire. Les contenus relèvent de la sensibilisation et de l'information juridique générale, et ne remplacent pas une consultation personnalisée.</p></div></div>
+<div class="rv warnbox"><b>Précision importante</b><p>Juriste Blessing se présente comme juriste, ni avocat ni notaire. Les fiches et vidéos relèvent de la sensibilisation et de l'information juridique générale. L'accompagnement personnalisé est présenté sur la page Services.</p></div></div>
 </div></section>
 <section class="s dark"><div class="wrap"><div class="shead"><div><p class="kicker light rv">Reconnaissance</p><h2 class="rv">Une <em>audience</em> qui compte.</h2></div></div>
 <ol class="awards"><li class="rv"><span>01</span><p>Plus de 649 000 abonnés sur Facebook</p><em>Communauté</em></li><li class="rv"><span>02</span><p>ORA 2026 : distingué parmi les 50 figures de l'effort africain</p><em>2026</em></li><li class="rv"><span>03</span><p>Prix du meilleur influenceur d'Afrique pour l'engagement civique, l'éducation juridique et l'impact social</p><em>2026</em></li></ol>
